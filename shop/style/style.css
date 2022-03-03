@@ -13,6 +13,13 @@ body{
     margin: 0 auto;
 }
 
+.hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0px 0px 0px 0px);
+}
+
 .header{
     background-color: #222222;
     padding: 18px 0;
@@ -24,45 +31,46 @@ body{
 .header_leftBox{
     display: flex;
     align-items: flex-end;
-    width: 111px;
-    justify-content: space-between;
+    gap: 40px;
 }
-.header_rightBox{
+.header_navBox{
     display: flex;
     align-items: flex-end;
-    width: 168px;
-    justify-content: space-between;
+    gap: 33px;
+}
+.header_searchButton,.header_menuButton{
+    border: none;
+    background-color: transparent;
 }
 
 .promo{
     background-color: #F1E4E6;
-    height: 764px;
 }
-.promo_wrap{
+.promo_wrap{    
+    min-height: 765px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
+    background-image: url(../img/back_promo.png);
+    background-position-x: -225px;
+    background-repeat: no-repeat;
 }
-.slogan{
-    width: 800px;
+.promo_h1{
     box-sizing: border-box;
-    margin-left: 64px;
+    margin-right: 90px;
     padding-left: 16px;
     border-left: 12px solid #F16D7F;
-}
-.slogan_h1{
-    font-weight: 900;
-    font-size: 48px;
-    line-height: 58px;    
-    color: #222222;
-}
-.slogan_h2{
     font-weight: bold;
     font-size: 32px;
     line-height: 38px;    
     color: #222222;
 }
-.promo_h2>span{
+.promo_h1 span:first-child{
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 58px;
+}
+.promo_h1 span:last-child{
     color: #F16D7F;
 }
 
@@ -72,14 +80,15 @@ body{
 }
 .productCategories{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
     justify-content: space-between;
+    gap: 30px;
 }
 .productForWoman{
     width: 360px;
     height: 260px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
     background-image: url("../img/back_forwomen.jpg");
 }
@@ -87,7 +96,7 @@ body{
     width: 360px;
     height: 260px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
     background-image: url("../img/back_formen.jpg");
 }
@@ -95,16 +104,15 @@ body{
     width: 360px;
     height: 260px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
     background-image: url("../img/back_forkid.jpg");
 }
 .productAccesories{
-    margin-top: 30px;
     width: 100%;
     height: 180px;
-    display: flex;
-    flex-direction: column;
+    display: flex;    
+    align-items: center;
     justify-content: center;    
     background-image: url("../img/back_accesories.jpg");
 }
@@ -114,7 +122,7 @@ body{
     line-height: 19px;
     color: #FFFFFF;
 }
-.productCategoris_heading{
+.productCategoris_text span{
     text-align: center;
     font-weight: bold;
     font-size: 24px;
@@ -129,6 +137,7 @@ body{
     align-items: center;
 }
 .feturedItems_heading{
+    font-weight: normal;
     font-size: 30px;
     line-height: 36px;
     color: #222222;
@@ -140,20 +149,21 @@ body{
     color: #9F9F9F;
 }
 .productCardsBox{
-    margin-top: 18px;
+    margin-top: 48px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 30px;
 }
 .productCard{
     width: 360px;
-    margin-top: 30px;
     background-color: #F8F8F8;
 }
 .productCard_content{
     margin: 25px 16px 20px 16px;
 }
 .productCard_heading{
+    font-weight: normal;
     font-size: 13px;
     line-height: 16px;
     color: #000000;
@@ -196,6 +206,7 @@ body{
     align-items: center;
 }
 .feature_item_heading{
+    font-weight: normal;
     margin-top: 19px;
     font-size: 20px;
     line-height: 24px;
@@ -240,7 +251,7 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.subscribe_buttonBox_heading{
+.subscribe_heading{
     font-weight: bold;
     font-size: 24px;
     line-height: 40px;
@@ -251,10 +262,10 @@ body{
     line-height: 30px;
     color: #222224;
 }
-.subscribe_buttonBox_wrap{
+.subscribe_form{
     margin-top: 32px;
 }
-.subscribe_button_inputArea{
+.subscribe_form_input{
     font-size: 14px;
     line-height: 17px;
     width: 256px;
@@ -264,6 +275,10 @@ body{
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     background-color: #E1E1E1;
+}
+.subscribe_form_input::placeholder{
+    color: #222224;
+    opacity: 0.67;
 }
 .subscribe_button{
     width: 100px;
