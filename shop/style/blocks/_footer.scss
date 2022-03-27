@@ -1,0 +1,31 @@
+.footer{
+    background-color: #222224;
+    padding: 24px 0;
+    &__wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__copy{
+        font-size: 16px;
+        line-height: 19px;
+        color: #FBFBFB;
+    }
+    &__socials{
+        display: flex;
+        gap: 7px;
+    }
+    &__link{
+        @include display-flex-center();
+        width: 32px;
+        height: 32px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #000000;
+        background-color: $alt-color;
+        &:hover{
+            color: $alt-color;
+            background-color: $main-color;
+        }
+    }
+}

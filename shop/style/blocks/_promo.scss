@@ -1,0 +1,33 @@
+.promo{
+    background-color: #F1E4E6;
+    
+    &__wrap{    
+        min-height: 765px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        background-image: url(../img/back_promo.png);
+        background-position-x: -225px;
+        background-repeat: no-repeat;
+    }
+    &__h1{
+        box-sizing: border-box;
+        margin-right: 90px;
+        padding-left: 16px;
+        border-left: 12px solid $main-color;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 38px;    
+        color: #222222;
+
+        &_size{
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 58px;
+        }
+
+        &_color{
+            color: $main-color;
+        }
+    }
+}

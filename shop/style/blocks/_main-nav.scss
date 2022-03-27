@@ -1,0 +1,59 @@
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+
+    &__list{
+        display: flex;
+        align-items: flex-end;
+        list-style: none;
+    }
+
+    &__logo{
+        gap: 40px;
+    }
+
+    &__menu{
+        gap: 33px;
+    }
+
+    &__item{
+        svg{
+            fill: $alt-color;
+        }
+
+        &:hover{
+            svg{
+                fill: $main-color;
+            }
+        }
+    }
+
+    &__button{
+        border: none;
+        background-color: transparent;
+    }
+
+    &__link{
+        text-decoration: none;
+    }
+
+    &__cart-link{
+        position: relative;
+        display: flex;
+
+        span{
+            @include display-flex-center();
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            color: $alt-color;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            background-color: $main-color;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;                
+        }
+    }
+}

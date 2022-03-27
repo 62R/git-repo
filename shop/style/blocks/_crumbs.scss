@@ -1,0 +1,40 @@
+.crumbs{
+    background-color: #F8F3F4;
+    padding: 60px 0;
+    &__wrap{
+        display: flex;
+        justify-content: space-between; 
+    }
+    &__heading{
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: $main-color;
+    }
+    &__list{
+        display: flex;
+        list-style: none;        
+    }
+    &__item{
+        &::before{
+            content: "/";
+            margin: 0 5px;
+        }
+        &:first-child:before{
+            content: none;
+        }
+    }
+    &__link{
+        @include text-font-style();
+        color: #636363;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+            color: $main-color;
+        }
+        &_current{
+            font-weight: bold;
+            color: $main-color;
+        }
+    }
+}
