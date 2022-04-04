@@ -1,30 +1,35 @@
-.feedback{
+.feedback {
     background-color: #D73C3C;
     background-image: url(../img/back_subscribe.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;   
+    background-position: bottom;
     padding: 97px 0 126px 0;
-    &__wrap{
+
+    &__wrap {
         display: flex;
         align-items: center;
-        justify-content: space-between;        
+        justify-content: space-between;
     }
-    &__review{
+
+    &__review {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 360px;
     }
-    &__subscribe{
+
+    &__subscribe {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    &__email-form{
-        margin-top: 32px;        
+
+    &__email-form {
+        margin-top: 32px;
     }
-    &__input{
+
+    &__input {
         @include text-font-style();
         width: 256px;
         height: 49px;
@@ -33,13 +38,16 @@
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
         background-color: #E1E1E1;
-        &::placeholder{
+
+        &::placeholder {
             color: #222224;
-            opacity: 0.67;            
+            opacity: 0.67;
         }
     }
-    &__button{
+
+    &__button {
         @include text-font-style();
+        @include button-transition();
         width: 100px;
         height: 49px;
         padding: 0;
@@ -48,27 +56,34 @@
         border-bottom-right-radius: 25px;
         background-color: $main-color;
         color: $alt-color;
+
+        &:hover {
+            background: #D73C3C;
+        }
     }
-    &__heading{
+
+    &__heading {
         font-weight: bold;
         font-size: 24px;
         line-height: 40px;
         color: #222224;
     }
-    &__text{
-        &_type{
-            &_review{
+
+    &__text {
+        &_type {
+            &_review {
                 margin-top: 30px;
                 text-align: center;
                 font-size: 20px;
-                line-height: 24px;                
+                line-height: 24px;
             }
-            &_subscribe{
+
+            &_subscribe {
                 font-size: 18px;
                 line-height: 30px;
-                color: #222224;                
+                color: #222224;
             }
         }
     }
-    
+
 }

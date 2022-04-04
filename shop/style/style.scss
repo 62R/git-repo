@@ -2,31 +2,43 @@ $main-color: #F16D7F;
 $alt-color: #FFFFFF;
 $product-veiwer-margin: 75px;
 
-@mixin text-font-style{
+@mixin text-font-style {
     font-size: 14px;
     line-height: 17px;
     font-weight: 300;
 }
-@mixin display-flex-center{
+
+@mixin display-flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-@mixin button-style{
+
+@mixin button-transition {
+    transition: background-color 0.3s, color 0.3s, text-decoration 0.3s, fill 0.3s;
+}
+
+@mixin button-style {
     @include display-flex-center();
+    @include button-transition();
     color: #F26376;
     text-decoration: none;
     font-size: 16px;
     line-height: 19px;
     border: 1px solid #FF6A6A;
     background-color: $alt-color;
-    &:hover{
+
+    &:hover {
         color: $alt-color;
         background-color: $main-color;
-        svg{
-            fill: $alt-color;
-        }
+        fill: $alt-color;
     }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 @import 'blocks/main-nav';
@@ -39,158 +51,192 @@ $product-veiwer-margin: 75px;
 @import 'blocks/crumbs';
 @import 'blocks/features';
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Lato', sans-serif;
 }
 
-.wrap{
+.wrap {
     width: 1140px;
     margin: 0 auto;
-    &_type{
-        &_colomn{
+
+    &_type {
+        &_colomn {
             display: flex;
             justify-content: space-between;
         }
     }
-    &_page{
-        &_cart{
+
+    &_page {
+        &_cart {
             margin-top: 96px;
-            margin-bottom: 128px;            
+            margin-bottom: 128px;
         }
-        &_registration{
+
+        &_registration {
             margin-top: 64px;
             margin-bottom: 96px;
         }
     }
 }
 
-.hidden{
+.hidden {
     position: absolute;
     width: 1px;
     height: 1px;
     clip: rect(0px 0px 0px 0px);
 }
 
-.header{
+.header {
     background-color: #222222;
     padding: 18px 0;
 }
 
-.content{
+.content {
     flex-grow: 1;
 }
 
 
-.filter{
+.filter {
     display: flex;
     width: 100%;
-    &__button{
+
+    &__button {
         @include text-font-style();
         margin-left: 15px;
         background: none;
         border: none;
         font-weight: 600;
         color: #000000;
-        svg{
+        fill: #000000;
+
+        svg {
             margin-left: 10px;
-            fill: #000000;
         }
-        &_type_in-item{
+
+        &_type_in-item {
             font-weight: 300;
             color: #6F6E6E;
-            svg{
-                fill: #6F6E6E;
-            }
+            fill: #6F6E6E;
         }
     }
 
-    &__list{
+    &__list {
         @include display-flex-center();
         list-style: none;
         gap: 28px;
     }
 
-    &_page{
-        &_catalog{
+    &_page {
+        &_catalog {
             justify-content: space-between;
             margin-bottom: 64px;
         }
-        &_product{
+
+        &_product {
             justify-content: center;
         }
     }
 }
 
-.pagination{    
+.pagination {
     margin-top: 48px;
-    &__list{
+
+    &__list {
         display: flex;
         align-items: center;
         padding: 15px;
         border: 1px solid #EBEBEB;
         list-style-type: none;
     }
-    &__item{
+
+    &__item {
         margin: 0 11px;
-        &_position{
-            &_first, &_post-dots{
+
+        &_position {
+
+            &_first,
+            &_post-dots {
                 margin-left: 0;
             }
-            &_last, &_prev-dots{
+
+            &_last,
+            &_prev-dots {
                 margin-right: 0;
             }
-            &_dots{
-                margin: 0 0;    
+
+            &_dots {
+                margin: 0 0;
                 font-size: 17px;
                 color: #EF5B70;
             }
-        } 
+        }
     }
-    &__button{
+
+    &__button {
+        @include button-transition();
         background: none;
         border: none;
         font-size: 17px;
-        color: #EF5B70;
+        color: #C4C4C4;
+
+        &:hover {
+            fill: $main-color;
+            color: #000000;
+        }
+
+        &_status {
+            &_active {
+                color: $main-color;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+
+            &_disabled {
+                fill: #C4C4C4;
+                color: #C4C4C4;
+
+                &:hover {
+                    fill: #C4C4C4;
+                    color: #C4C4C4;
+                }
+            }
+        }
+
+
     }
 }
 
-.product-card{
-    &__viewer{
+.product-card {
+    &__viewer {
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: #F7F7F7;
     }
 
-    &__scroll-button{
+    &__scroll-button {
+        @include button-transition();
         padding: 8px;
         background-color: rgba(42, 42, 42, 0.15);
         border: none;
-        svg{
-            fill: #000000;            
-        }
-        &:hover{
-            svg{
-                fill: $main-color;
-            }
+        fill: #000000;
+
+        &:hover {
+            fill: $main-color;
         }
     }
 
-    &__img{
+    &__img {
         margin-top: 11px;
         margin-bottom: $product-veiwer-margin;
     }
 
-    &__info{
+    &__info {
         flex-direction: column;
         margin-top: -$product-veiwer-margin;
         background-color: $alt-color;
@@ -198,72 +244,74 @@ body{
         padding: 65px 250px;
     }
 
-    &__h2{
+    &__h2 {
         text-align: center;
         font-weight: 300;
         font-size: 18px;
         line-height: 22px;
         color: #4D4D4D;
     }
-    
-    &__h3{
+
+    &__h3 {
         @include text-font-style();
         text-align: center;
         color: $main-color;
     }
-    
-    &__text{
+
+    &__text {
         @include text-font-style();
         margin-top: 48px;
-        text-align: center; 
+        text-align: center;
         color: #5E5E5E;
     }
 
-    &__price{
+    &__price {
         margin-top: 32px;
         text-align: center;
         font-weight: 300;
         font-size: 24px;
         line-height: 29px;
-        color: #EF5B70;        
+        color: #EF5B70;
     }
 
-    &__hr{
+    &__hr {
         border: none;
-        &_size_small{
+
+        &_size_small {
             width: 63px;
             border-top: 3px solid #EF5B70;
             margin: 12px auto;
         }
-        &_size_large{
+
+        &_size_large {
             border-top: 1px solid #EAEAEA;
             margin: 65px auto;
         }
     }
 
-    &__button{
+    &__button {
         @include button-style();
         margin: 48px auto 0 auto;
         padding-right: 55px;
+        fill: #EF5B70;
 
-        svg{
+        svg {
             margin: 15px 23px 9px 24px;
-            fill: #EF5B70;
         }
     }
 }
 
-.cart{
+.cart {
     width: 652px;
 
-    &__list{
+    &__list {
         list-style-type: none;
         display: flex;
         flex-direction: column;
         gap: 40px;
     }
 
-    &__item{
+    &__item {
         display: flex;
         position: relative;
         width: 652px;
@@ -271,45 +319,57 @@ body{
         box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
     }
 
-    &__img{
+    &__img {
         width: 262px;
     }
 
-    &__item-info{
-        margin: 22px 31px;        
+    &__item-info {
+        margin: 22px 31px;
     }
 
-    &__button-wrap{
+    &__button-wrap {
         margin-top: 72px;
         display: flex;
         justify-content: space-between;
     }
 
-    &__button{
-        &_type{
-            &_remove{
+    &__button {
+        @include button-transition();
+
+        &_type {
+            &_remove {
                 position: absolute;
                 top: 28px;
                 right: 22px;
                 width: 18px;
                 height: 18px;
                 border: none;
-                background: none;
-                svg{
-                    fill: #575757;
-                }                
+                background: transparent;
+                fill: #575757;
+
+                &:hover {
+                    fill: $main-color;
+                }
             }
-            &_cart-control{
+
+            &_cart-control {
                 @include text-font-style();
                 padding: 16px 40px;
                 color: #000000;
                 border: 1px solid #A4A4A4;
-                background: none;
+                background: transparent;
+
+                &:hover {
+                    background-color: $main-color;
+                    color: $alt-color;
+                }
             }
         }
+
+
     }
 
-    &__heading{
+    &__heading {
         font-weight: 400;
         font-size: 24px;
         line-height: 29px;
@@ -317,21 +377,37 @@ body{
         margin-bottom: 42px;
     }
 
-    &__text{        
+    &__link {
+        @include button-transition();
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+
+    &__text {
         margin-bottom: 6px;
         font-weight: 400;
         font-size: 22px;
         line-height: 26px;
         color: #575757;
-        &_type{
-            &_price{
+    }
+
+    &__text-span {
+        &_type {
+            &_price {
                 color: #EF5B70;
             }
-            &_color, &_size{
+
+            &_color,
+            &_size {
                 color: #6F6E6E;
             }
-            &_quantity{
-                color:#656565;
+
+            &_quantity {
+                color: #656565;
                 margin-left: 24px;
                 padding: 1px 16px;
                 font-size: 18px;
@@ -342,32 +418,34 @@ body{
     }
 }
 
-.checkout{
+.checkout {
     width: 360px;
     display: flex;
     flex-direction: column;
 }
 
-.input-form{
-    &__wrap{
-        &_type{
-            &_input{
-                display: flex;
+.input-form {
+    &__wrap {
+        display: flex;
+        gap: 20px;
+
+        &_type {
+            &_input {
                 flex-direction: column;
-                gap: 20px;
             }
-            &_radio{
+
+            &_radio {
                 margin-top: 31px;
                 margin-bottom: 33px;
                 font-weight: 300;
                 font-size: 11px;
                 line-height: 13px;
-                color: #000000;                
+                color: #000000;
             }
         }
     }
 
-    &__heading{
+    &__heading {
         font-weight: 300;
         font-size: 16px;
         line-height: 19px;
@@ -375,21 +453,24 @@ body{
         margin-bottom: 20px;
     }
 
-    &__input{
+    &__input {
         padding: 13px 18px;
         font-weight: 300;
         font-size: 13px;
         line-height: 16px;
         color: #B1B1B1;
         border: 1px solid #A4A4A4;
-        ::placeholder{
+
+        ::placeholder {
             color: #222222;
         }
     }
 
-    &__button{
-        &_type{
-            &_small{
+    &__button {
+        @include button-transition();
+
+        &_type {
+            &_small {
                 width: max-content;
                 font-weight: 300;
                 font-size: 11px;
@@ -399,32 +480,47 @@ body{
                 padding: 10px 15px;
                 border: 1px solid #A4A4A4;
                 margin-top: 23px;
+
+                &:hover {
+                    color: $alt-color;
+                    background-color: $main-color;
+                }
             }
-            &_large{
+
+            &_large {
                 @include text-font-style();
                 padding: 16px 29px;
-                border: none;
+                border: 1px solid $main-color;
                 background-color: #F16D7F;
                 font-weight: 400;
                 color: $alt-color;
                 margin-top: 39px;
-                svg{
-                    fill: $alt-color;
+                fill: $alt-color;
+
+                svg {
                     margin-left: 20px;
+                }
+
+                &:hover {
+                    fill: $main-color;
+                    color: $main-color;
+                    background-color: $alt-color;
                 }
             }
         }
     }
-    
-    &__radio{
+
+    &__radio {
         position: absolute;
         z-index: -1;
         opacity: 0;
-        &+label{
+
+        &+label {
             display: inline-flex;
             align-items: center;
             user-select: none;
-            &::before{
+
+            &::before {
                 content: '';
                 display: inline-block;
                 width: 18px;
@@ -439,30 +535,36 @@ body{
                 background-size: 50% 50%;
             }
         }
-        &:not(:disabled):not(:checked)+label:hover::before{
-            border-color: #F1E4E6;  
+
+        &:not(:disabled):not(:checked)+label:hover::before {
+            border-color: #F1E4E6;
         }
-        &:not(:disabled):active+label::before{
+
+        &:not(:disabled):active+label::before {
             background-color: #F1E4E6;
             border-color: #F1E4E6;
         }
-        &:focus+label::before{
+
+        &:focus+label::before {
             box-shadow: 0 0 0 0.2rem #F1E4E6;
         }
-        &:focus:not(:checked)+label::before{
+
+        &:focus:not(:checked)+label::before {
             border-color: #f198a4;
         }
-        &:focus:not(:checked)+label::before{
+
+        &:focus:not(:checked)+label::before {
             border-color: #f198a4;
         }
-        &:checked+label::before{
+
+        &:checked+label::before {
             border-color: #F16D7F;
             background-color: #F16D7F;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
         }
     }
-    
-    &__text{
+
+    &__text {
         font-weight: 300;
         font-size: 13px;
         line-height: 16px;
@@ -472,15 +574,16 @@ body{
 
 }
 
-.checkout-form{
+.checkout-form {
     background-color: #F5F3F3;
     display: flex;
     flex-direction: column;
     padding: 40px;
     margin-top: 57px;
-    &__text{
-        &_type{
-            &_sub-name{
+
+    &__text {
+        &_type {
+            &_sub-name {
                 margin-right: -8px;
                 text-align: right;
                 font-weight: 400;
@@ -488,31 +591,37 @@ body{
                 line-height: 13px;
                 color: #4A4A4A;
             }
-            &_sub-number{
+
+            &_sub-number {
                 margin-left: 25px;
             }
-            &_grand-name{
+
+            &_grand-name {
                 margin-right: -5px;
                 margin-top: 12px;
                 text-align: right;
                 font-weight: 300;
                 font-size: 16px;
-                line-height: 19px;                
+                line-height: 19px;
                 color: #222222;
             }
-            &_grand-number{
+
+            &_grand-number {
                 margin-left: 25px;
                 font-weight: 700;
                 color: #F16D7F;
             }
         }
     }
-    &__hr{
+
+    &__hr {
         margin-top: 21px;
         border: none;
         border-top: 1px solid #E2E2E2;
     }
-    &__button{
+
+    &__button {
+        @include button-transition();
         margin-top: 17px;
         padding-top: 17px;
         padding-bottom: 17px;
@@ -521,31 +630,36 @@ body{
         line-height: 19px;
         color: $alt-color;
         background-color: $main-color;
-        border: none;
+        border: solid 1px $main-color;
+
+        &:hover {
+            color: $main-color;
+            background-color: $alt-color;
+        }
     }
 }
 
-.aside-info{
+.aside-info {
     width: 652px;
     display: flex;
     flex-direction: column;
     gap: 22px;
 
-    &__list{
+    &__list {
         display: flex;
         flex-direction: column;
         gap: 16px;
         list-style-type: none;
     }
 
-    &__item{
-        &::before{
+    &__item {
+        &::before {
             content: url(../img/check-mark.svg);
             margin-right: 22px;
         }
     }
 
-    &__text{
+    &__text {
         font-weight: 300;
         font-size: 24px;
         line-height: 29px;

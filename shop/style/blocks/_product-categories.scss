@@ -1,48 +1,54 @@
-.product-categories{
+.product-categories {
     margin-top: 65px;
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
     gap: 30px;
-    
-    &__box{
-        &_size{
-            &_little{
-                @include display-flex-center();
+
+    &__box {
+        @include display-flex-center();
+
+        &_size {
+            &_little {
                 width: 360px;
                 height: 260px;
             }
-            &_large{
-                @include display-flex-center();
+
+            &_large {
                 width: 100%;
-                height: 180px; 
+                height: 180px;
             }
         }
-        &_background{
-            &_women{
+
+        &_background {
+            &_women {
                 background-image: url("../img/back_forwomen.jpg");
             }
-            &_men{
-                background-image: url("../img/back_formen.jpg");                
+
+            &_men {
+                background-image: url("../img/back_formen.jpg");
             }
-            &_kid{
+
+            &_kid {
                 background-image: url("../img/back_forkid.jpg");
             }
-            &_accesories{
-                background-image: url("../img/back_accesories.jpg");                
+
+            &_accesories {
+                background-image: url("../img/back_accesories.jpg");
             }
         }
     }
 
-    &__text{
+    &__text {
         text-align: center;
         font-size: 16px;
         line-height: 19px;
         color: $alt-color;
-        &_color{
+
+        span {
             font-weight: bold;
             font-size: 24px;
             line-height: 29px;
-            color: $main-color;            
+            color: $main-color;
         }
     }
 }

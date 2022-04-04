@@ -1,21 +1,26 @@
-.footer{
+.footer {
     background-color: #222224;
     padding: 24px 0;
-    &__wrap{
+
+    &__wrap {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    &__copy{
+
+    &__copy {
         font-size: 16px;
         line-height: 19px;
         color: #FBFBFB;
     }
-    &__socials{
+
+    &__socials {
         display: flex;
         gap: 7px;
     }
-    &__link{
+
+    &__link {
+        @include button-transition();
         @include display-flex-center();
         width: 32px;
         height: 32px;
@@ -23,7 +28,8 @@
         font-size: 16px;
         color: #000000;
         background-color: $alt-color;
-        &:hover{
+
+        &:hover {
             color: $alt-color;
             background-color: $main-color;
         }
