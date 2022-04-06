@@ -7,6 +7,7 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 30px;
         list-style-type: none;
     }
@@ -14,6 +15,11 @@
     &__item {
         width: 360px;
         background-color: #F8F8F8;
+        position: relative;
+
+        &:hover .product-list__overlay {
+            display: flex;
+        }
     }
 
     &__h2 {
@@ -73,7 +79,7 @@
         }
     }
 
-    &__button {
+    &__browse-button {
         @include button-style();
         @include button-transition();
         margin-top: 48px;
@@ -83,6 +89,39 @@
     &__video {
         width: 360px;
         height: 420px;
+    }
+
+    &__overlay {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 360px;
+        height: 420px;
+        background-color: rgba(58, 56, 56, 0.86);
+    }
+
+    &__overlay-button {
+        @include text-font-style;
+        @include button-transition;
+        color: $alt-color;
+        fill: $alt-color;
+        border: 1px solid $alt-color;
+        background-color: transparent;
+        padding: 11px 16px 8px 13px;
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 11px;
+        }
+
+        &:hover {
+            fill: $main-color;
+            border-color: $main-color;
+            color: $main-color;
+            cursor: pointer;
+        }
     }
 
     &_margin {

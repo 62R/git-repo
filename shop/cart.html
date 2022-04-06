@@ -16,7 +16,7 @@
         <nav class="wrap main-nav">
             <ul class="main-nav__list main-nav__logo">
                 <li class="main-nav__item"><a href="index.html" class="main-nav__link main-nav__link_type_logo"><img
-                            src="img/logo.svg" alt="logo"></a></li>
+                            src="img/logo.png" alt="logo"></a></li>
                 <li class="main-nav__item"><button class="main-nav__button" type="button"><svg width="27" height="28"
                             viewBox="0 0 27 28" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -120,9 +120,9 @@
                 <form action="#" class="input-form">
                     <h4 class="input-form__heading">SHIPPING ADRESS</h4>
                     <div class="input-form__wrap input-form__wrap_type_input">
-                        <input type="text" class="input-form__input" placeholder="Sity">
-                        <input type="text" class="input-form__input" placeholder="State">
-                        <input type="number" class="input-form__input" placeholder="Postcode / Zip">
+                        <input type="text" class="input-form__input" placeholder="Sity" required>
+                        <input type="text" class="input-form__input" placeholder="State" required>
+                        <input type="number" class="input-form__input" placeholder="Postcode / Zip" required>
                     </div>
                     <button type="submit" class="input-form__button input-form__button_type_small">GET A QUOTE</button>
                 </form>
@@ -131,8 +131,8 @@
                             class="checkout-form__text checkout-form__text_type_sub-number">$900</span></p>
                     <p class="checkout-form__text checkout-form__text_type_grand-name">GRAND TOTAL<span
                             class="checkout-form__text checkout-form__text_type_grand-number">$900</span></p>
-                    <hr class="checkout-form__hr">
-                    <button class="checkout-form__button">PROCEED TO CHECKOUT</button>
+                    <div class="checkout-form__button-wrap"><button class="checkout-form__button">PROCEED TO
+                            CHECKOUT</button></div>
                 </div>
             </section>
         </div>

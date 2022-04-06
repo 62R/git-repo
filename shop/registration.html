@@ -16,7 +16,7 @@
         <nav class="wrap main-nav">
             <ul class="main-nav__list main-nav__logo">
                 <li class="main-nav__item"><a href="index.html" class="main-nav__link main-nav__link_type_logo"><img
-                            src="img/logo.svg" alt="logo"></a></li>
+                            src="img/logo.png" alt="logo"></a></li>
                 <li class="main-nav__item"><button class="main-nav__button" type="button"><svg width="27" height="28"
                             viewBox="0 0 27 28" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -62,21 +62,21 @@
                 <form action="#" class="input-form">
                     <h4 class="input-form__heading">Your Name</h4>
                     <div class="input-form__wrap input-form__wrap_type_input">
-                        <input type="text" class="input-form__input" placeholder="First Name">
-                        <input type="text" class="input-form__input" placeholder="Last Name">
+                        <input type="text" class="input-form__input" placeholder="First Name" required>
+                        <input type="text" class="input-form__input" placeholder="Last Name" required>
                     </div>
                     <div class="input-form__wrap input-form__wrap_type_radio">
                         <input class="input-form__radio" type="radio" id="male" name="gender" value="male">
                         <label for="male">Male</label>
                         <input class="input-form__radio" type="radio" id="female" name="gender" value="female">
                         <label for="female">Female</label>
-                        <input class="input-form__radio" type="radio" id="other" name="gender" value="other">
+                        <input class="input-form__radio" type="radio" id="other" name="gender" value="other" checked>
                         <label for="other">Other</label>
                     </div>
                     <h4 class="input-form__heading">Login details</h4>
                     <div class="input-form__wrap input-form__wrap_type_input">
-                        <input type="text" class="input-form__input" placeholder="Email">
-                        <input type="text" class="input-form__input" placeholder="Password">
+                        <input type="email" class="input-form__input" placeholder="Email" required>
+                        <input type="text" class="input-form__input" placeholder="Password" required>
                     </div>
                     <p class="input-form__text">Please use 8 or more characters, with at least 1 number and a mixture of
                         uppercase and lowercase letters</p>
