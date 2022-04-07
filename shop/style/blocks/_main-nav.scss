@@ -1,59 +1,208 @@
-.main-nav{
+.main-nav {
     display: flex;
     justify-content: space-between;
 
-    &__list{
+    &__list {
         display: flex;
         align-items: flex-end;
         list-style: none;
     }
 
-    &__logo{
+    &__logo {
         gap: 40px;
     }
 
-    &__menu{
+    &__menu {
         gap: 33px;
     }
 
-    &__item{
-        svg{
-            fill: $alt-color;
-        }
-
-        &:hover{
-            svg{
-                fill: $main-color;
-            }
-        }
-    }
-
-    &__button{
+    &__button {
+        @include button-transition();
         border: none;
         background-color: transparent;
+        fill: $alt-color;
+
+        &:hover {
+            fill: $main-color;
+        }
     }
 
-    &__link{
+    &__link {
+        @include button-transition();
+        transition: transform 0.3s;
         text-decoration: none;
-    }
-
-    &__cart-link{
-        position: relative;
+        fill: $alt-color;
         display: flex;
 
-        span{
-            @include display-flex-center();
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            color: $alt-color;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 14px;
-            background-color: $main-color;
-            width: 19px;
-            height: 19px;
-            border-radius: 50%;                
+        &:hover {
+            fill: $main-color;
         }
+
+        &_type {
+            &_logo:hover {
+                transform: rotate(360deg);
+            }
+
+            &_cart {
+                position: relative;
+
+                span {
+                    @include display-flex-center();
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    color: $alt-color;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 14px;
+                    background-color: $main-color;
+                    width: 19px;
+                    height: 19px;
+                    border-radius: 50%;
+                }
+
+                &:hover span {
+                    -webkit-animation: bounce-in-top 1.1s both;
+                    animation: bounce-in-top 1.1s both;
+
+                    @-webkit-keyframes bounce-in-top {
+                        0% {
+                            -webkit-transform: translateY(-500px);
+                            transform: translateY(-500px);
+                            -webkit-animation-timing-function: ease-in;
+                            animation-timing-function: ease-in;
+                            opacity: 0;
+                        }
+
+                        38% {
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
+                            -webkit-animation-timing-function: ease-out;
+                            animation-timing-function: ease-out;
+                            opacity: 1;
+                        }
+
+                        55% {
+                            -webkit-transform: translateY(-65px);
+                            transform: translateY(-65px);
+                            -webkit-animation-timing-function: ease-in;
+                            animation-timing-function: ease-in;
+                        }
+
+                        72% {
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
+                            -webkit-animation-timing-function: ease-out;
+                            animation-timing-function: ease-out;
+                        }
+
+                        81% {
+                            -webkit-transform: translateY(-28px);
+                            transform: translateY(-28px);
+                            -webkit-animation-timing-function: ease-in;
+                            animation-timing-function: ease-in;
+                        }
+
+                        90% {
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
+                            -webkit-animation-timing-function: ease-out;
+                            animation-timing-function: ease-out;
+                        }
+
+                        95% {
+                            -webkit-transform: translateY(-8px);
+                            transform: translateY(-8px);
+                            -webkit-animation-timing-function: ease-in;
+                            animation-timing-function: ease-in;
+                        }
+
+                        100% {
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
+                            -webkit-animation-timing-function: ease-out;
+                            animation-timing-function: ease-out;
+                        }
+                    }
+
+                    @keyframes bounce-in-top {
+                        0% {
+                            -webkit-transform: translateY(-500px);
+                            transform: translateY(-500px);
+                            -webkit-animation-timing-function: ease-in;
+                            animation-timing-function: ease-in;
+                            opacity: 0;
+                        }
+
+                        38% {
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
+                            -webkit-animation-timing-function: ease-out;
+                            animation-timing-function: ease-out;
+                            opacity: 1;
+                        }
+
+                        55% {
+                            -webkit-transform: translateY(-65px);
+                            transform: translateY(-65px);
+                            -webkit-animation-timing-function: ease-in;
+                            animation-timing-function: ease-in;
+                        }
+
+                        72% {
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
+                            -webkit-animation-timing-function: ease-out;
+                            animation-timing-function: ease-out;
+                        }
+
+                        81% {
+                            -webkit-transform: translateY(-28px);
+                            transform: translateY(-28px);
+                            -webkit-animation-timing-function: ease-in;
+                            animation-timing-function: ease-in;
+                        }
+
+                        90% {
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
+                            -webkit-animation-timing-function: ease-out;
+                            animation-timing-function: ease-out;
+                        }
+
+                        95% {
+                            -webkit-transform: translateY(-8px);
+                            transform: translateY(-8px);
+                            -webkit-animation-timing-function: ease-in;
+                            animation-timing-function: ease-in;
+                        }
+
+                        100% {
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
+                            -webkit-animation-timing-function: ease-out;
+                            animation-timing-function: ease-out;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+}
+
+@media (max-width: 760px) {
+    .main-nav__menu>.main-nav__item {
+        &:nth-child(2) {
+            display: none;
+        }
+
+        &:nth-child(3) {
+            display: none;
+        }
+
     }
 }
