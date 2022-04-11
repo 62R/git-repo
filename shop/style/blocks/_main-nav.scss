@@ -29,7 +29,6 @@
 
     &__link {
         @include button-transition();
-        transition: transform 0.3s;
         text-decoration: none;
         fill: $alt-color;
         display: flex;
@@ -39,8 +38,12 @@
         }
 
         &_type {
-            &_logo:hover {
-                transform: rotate(360deg);
+            &_logo {
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: rotate(360deg);
+                }
             }
 
             &_cart {
