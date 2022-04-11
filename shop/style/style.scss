@@ -215,6 +215,12 @@ body {
                 svg {
                     transform: rotate(180deg);
                 }
+
+                &:hover {
+                    fill: $main-color;
+                    color: $main-color;
+                    background-color: $alt-color;
+                }
             }
         }
     }
