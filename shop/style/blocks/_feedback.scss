@@ -3,7 +3,7 @@
     background-image: url(../img/back_subscribe.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: left bottom;
     padding: 97px 0 126px 0;
 
     &__wrap {
@@ -17,6 +17,7 @@
         flex-direction: column;
         align-items: center;
         width: 360px;
+        min-height: 225px;
     }
 
     &__subscribe {
@@ -86,4 +87,63 @@
         }
     }
 
+}
+
+@media (max-width: 1160px) {
+    .feedback {
+        padding: 64px 0 140px 0;
+
+        &__wrap {
+            flex-direction: column;
+            justify-content: center;
+            gap: 48px;
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .feedback {
+        padding: 64px 8px 110px 8px;
+
+        &__wrap {
+            flex-direction: column;
+            justify-content: center;
+            gap: 48px;
+        }
+
+        &__review {
+            min-height: min-content;
+            width: 100%;
+        }
+
+        &__input {
+            width: 245px;
+        }
+
+        &__button {
+            width: 96px;
+        }
+
+        &__text {
+            &_type {
+                &_review {
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+                &_subscribe {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+            }
+        }
+
+        &__heading {
+            font-size: 24px;
+            line-height: 37px;
+        }
+
+    }
 }

@@ -35,3 +35,20 @@
         }
     }
 }
+
+@media (max-width: 760px) {
+    .footer {
+
+        padding: 43px 0 9px 0;
+
+        &__wrap {
+            justify-content: center;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        &__socials {
+            order: -1;
+        }
+    }
+}

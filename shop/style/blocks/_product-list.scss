@@ -14,11 +14,13 @@
 
     &__item {
         width: 360px;
+        display: flex;
+        flex-direction: column;
         background-color: #F8F8F8;
         position: relative;
 
         &:hover .product-list__overlay {
-            display: flex;
+            opacity: 1;
         }
     }
 
@@ -92,13 +94,15 @@
     }
 
     &__overlay {
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
         position: absolute;
         width: 360px;
         height: 420px;
         background-color: rgba(58, 56, 56, 0.86);
+        opacity: 0;
+        transition: opacity 1s;
     }
 
     &__overlay-button {
@@ -132,6 +136,40 @@
         &_catalog {
             margin-top: 55px;
             margin-bottom: 95px;
+        }
+    }
+}
+
+
+@media (max-width: 1160px) {
+    .product-list {
+        margin: 155px 0 65px 0;
+
+        &__list {
+            gap: 16px;
+        }
+
+        &__text {
+            &_place {
+                &_in-head {
+                    margin-top: 3px;
+                    margin-bottom: 72px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .product-list {
+        margin: 64px 0 96px 0;
+
+        &__text {
+            &_place {
+                &_in-head {
+                    margin-bottom: 64px;
+                }
+            }
         }
     }
 }

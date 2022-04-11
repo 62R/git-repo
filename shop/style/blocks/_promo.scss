@@ -34,3 +34,50 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .promo {
+        &__wrap {
+            min-height: 368px;
+            background-position-x: 0px;
+            background-size: 386px;
+        }
+
+        &__h1 {
+            margin-right: 33px;
+            padding-left: 16px;
+            font-size: 24px;
+            line-height: 29px;
+        }
+
+        &__header-span {
+            &_size_large {
+                font-size: 44px;
+                line-height: 53px;
+            }
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .promo {
+        &__wrap {
+            background-image: none;
+            justify-content: center;
+        }
+
+        &__h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        &__header-span {
+            &_size_large {
+                font-size: 38px;
+                line-height: 46px;
+            }
+        }
+    }
+}
