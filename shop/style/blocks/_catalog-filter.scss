@@ -15,6 +15,7 @@
     &__title-for-laptop {
         @include button-transition();
         @include text-font-style();
+        display: block;
         width: 360px;
         background-color: #FFFFFF;
         border: none;
@@ -37,6 +38,7 @@
     &__title-for-mobile {
         @include button-transition();
         @include text-font-style();
+        display: block;
         background-color: #FFFFFF;
         display: none;
         border: none;

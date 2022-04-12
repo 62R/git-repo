@@ -182,5 +182,11 @@
 @media (max-width: 760px) {
     .filter {
         gap: 24px;
+
+        &__item-title {
+            font-size: 12px;
+            line-height: 14px;
+        }
+
     }
 }
