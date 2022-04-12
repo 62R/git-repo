@@ -1,10 +1,11 @@
 .crumbs {
     background-color: #F8F3F4;
-    padding: 60px 0;
 
     &__wrap {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        padding: 60px 0;
     }
 
     &__heading {
@@ -49,5 +50,23 @@
                 text-decoration: none;
             }
         }
+    }
+}
+
+@media (max-width: 760px) {
+    .crumbs {
+        &__wrap {
+            padding-top: 24px;
+            padding-bottom: 46px;
+            flex-direction: column;
+            gap: 32px;
+
+            &_type_solo {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+        }
+
+
     }
 }

@@ -1,0 +1,137 @@
+.catalog-filter {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+
+    &__summary {
+        display: block;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    &__title-for-laptop {
+        @include button-transition();
+        @include text-font-style();
+        width: 360px;
+        background-color: #FFFFFF;
+        border: none;
+        font-weight: 600;
+        color: #000000;
+        fill: #000000;
+        text-align: left;
+        padding: 13px 16px;
+
+        svg {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            color: #EF5B70;
+            fill: #EF5B70;
+        }
+    }
+
+    &__title-for-mobile {
+        @include button-transition();
+        @include text-font-style();
+        background-color: #FFFFFF;
+        display: none;
+        border: none;
+        font-weight: 600;
+        color: #000000;
+        fill: #000000;
+        text-align: left;
+        padding: 10px 0;
+
+        &:hover {
+            color: #EF5B70;
+            fill: #EF5B70;
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        z-index: 1;
+        width: 360px;
+        padding: 0 16px 16px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        background-color: #FFFFFF;
+        box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+    }
+
+
+    &__overlay-summary {
+        @include text-font-style();
+        font-weight: 400;
+        color: #EF5B70;
+        display: block;
+        padding: 11px;
+        border-left: 5px solid #EF5B70;
+        border-bottom: 1px solid #EBEBEB;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    &__overlay-list {
+        list-style-type: none;
+        margin: 24px 16px 6px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+    }
+
+    &__overlay-button {
+        @include text-font-style();
+        font-weight: 400;
+        color: #6F6E6E;
+        border: none;
+        background-color: transparent;
+    }
+
+    &[open] {
+        box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+
+        .catalog-filter__summary {
+            color: #EF5B70;
+            fill: #EF5B70;
+
+            svg {
+                transform: scale(1, -1);
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1160px) {
+    .catalog-filter {
+        &__title-for-laptop {
+            padding: 10px 0;
+        }
+    }
+
+    &[open] {
+        .catalog-filter__title-for-laptop {
+            padding-left: 15px;
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .catalog-filter {
+        &__title-for-laptop {
+            display: none;
+        }
+
+        &__title-for-mobile {
+            display: block;
+        }
+    }
+}

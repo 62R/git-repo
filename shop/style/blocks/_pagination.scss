@@ -1,0 +1,69 @@
+.pagination {
+    margin-top: 48px;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border: 1px solid #EBEBEB;
+        list-style-type: none;
+    }
+
+    &__item {
+        margin: 0 11px;
+
+        &_position {
+
+            &_first,
+            &_post-dots {
+                margin-left: 0;
+            }
+
+            &_last,
+            &_prev-dots {
+                margin-right: 0;
+            }
+
+            &_dots {
+                margin: 0 0;
+                font-size: 17px;
+                color: #EF5B70;
+            }
+        }
+    }
+
+    &__button {
+        @include button-transition();
+        background: none;
+        border: none;
+        font-size: 17px;
+        color: #C4C4C4;
+
+        &:hover {
+            fill: $main-color;
+            color: #000000;
+        }
+
+        &_status {
+            &_active {
+                color: $main-color;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+
+            &_disabled {
+                fill: #C4C4C4;
+                color: #C4C4C4;
+
+                &:hover {
+                    fill: #C4C4C4;
+                    color: #C4C4C4;
+                }
+            }
+        }
+
+
+    }
+}

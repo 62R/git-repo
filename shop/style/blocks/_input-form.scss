@@ -1,0 +1,155 @@
+.input-form {
+    width: 360px;
+
+    &__wrap {
+        display: flex;
+        gap: 20px;
+
+        &_type {
+            &_input {
+                flex-direction: column;
+            }
+
+            &_radio {
+                margin-top: 31px;
+                margin-bottom: 33px;
+                font-weight: 300;
+                font-size: 11px;
+                line-height: 13px;
+                color: #000000;
+            }
+        }
+    }
+
+    &__heading {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        padding: 13px 18px;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #B1B1B1;
+        border: 1px solid #A4A4A4;
+
+        ::placeholder {
+            color: #222222;
+        }
+    }
+
+    &__button {
+        @include button-transition();
+
+        &_type {
+            &_small {
+                width: max-content;
+                font-weight: 300;
+                font-size: 11px;
+                line-height: 13px;
+                color: #4A4A4A;
+                background: none;
+                padding: 10px 15px;
+                border: 1px solid #A4A4A4;
+                margin-top: 23px;
+
+                &:hover {
+                    color: $alt-color;
+                    background-color: $main-color;
+                }
+            }
+
+            &_large {
+                @include text-font-style();
+                padding: 16px 29px;
+                border: 1px solid $main-color;
+                background-color: #F16D7F;
+                font-weight: 400;
+                color: $alt-color;
+                margin-top: 39px;
+                fill: $alt-color;
+
+                svg {
+                    margin-left: 20px;
+                }
+
+                &:hover {
+                    fill: $main-color;
+                    color: $main-color;
+                    background-color: $alt-color;
+                }
+            }
+        }
+    }
+
+    &__radio {
+        user-select: none;
+
+        &>span {
+            display: inline-flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                flex-shrink: 0;
+                flex-grow: 0;
+                border: 1px solid #adb5bd;
+                border-radius: 50%;
+                margin-right: 0.5em;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50% 50%;
+            }
+        }
+
+        &>input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+
+            &:not(:disabled):not(:checked)+span:hover::before {
+                border-color: #F1E4E6;
+            }
+
+            &:not(:disabled):active+span::before {
+                background-color: #F1E4E6;
+                border-color: #F1E4E6;
+            }
+
+            &:focus+span::before {
+                box-shadow: 0 0 0 0.2rem rgba(241, 109, 127, 0.25);
+            }
+
+            &:focus:not(:checked)+span::before {
+                border-color: $main-color;
+            }
+
+            &:checked+span::before {
+                border-color: $main-color;
+                background-color: $main-color;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+            }
+
+            &:disabled+span::before {
+                background-color: #F1E4E6;
+            }
+
+        }
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #B1B1B1;
+        margin-top: 15px;
+    }
+
+}
