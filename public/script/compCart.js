@@ -20,6 +20,10 @@ Vue.component('cart', {
             })
     },
     methods: {
+        /**
+         * Метод выполняет удаление продукта из корзины.
+         * @param {Object} cartItem Объект содержащий данные об продусте который надо удалить
+         */
         remove(cartItem) {
             this.$parent.deleteJson(`${this.cartUrl}/${cartItem['id_product']}`)
                 .then(data => {
@@ -32,6 +36,9 @@ Vue.component('cart', {
                     }
                 })
         },
+        /**
+         * Метод удаляет все данные из корзины.
+         */
         clear() {
             this.$parent.deleteJson(`${this.cartUrl}/all`)
                 .then(data => {

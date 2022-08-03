@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const router = express.Router();
 
+//выполнение действий на запрос данных о корзины
 router.get('/', (req, res) => {
     fs.readFile('server/db/userCart.json', 'utf-8', (err, data) => {
         if (err) {
@@ -12,6 +13,8 @@ router.get('/', (req, res) => {
     });
 });
 
+
+//выполение действий на добавление новых данных в корзину
 router.post('/', (req, res) => {
     fs.readFile('server/db/userCart.json', 'utf-8', (err, data) => {
         if (err) {
@@ -32,6 +35,8 @@ router.post('/', (req, res) => {
     });
 });
 
+
+//выполение действий на изменнение данных в корзине
 router.put('/:id/:action', (req, res) => {
     fs.readFile('server/db/userCart.json', 'utf-8', (err, data) => {
         if (err) {
@@ -61,6 +66,8 @@ router.put('/:id/:action', (req, res) => {
     });
 });
 
+
+//выполение действий на удаление данных в корзине
 router.delete('/:id', (req, res) => {
     fs.readFile('server/db/userCart.json', 'utf-8', (err, data) => {
         if (err) {

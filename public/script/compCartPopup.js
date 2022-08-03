@@ -22,6 +22,10 @@ Vue.component('cart-popup', {
             })
     },
     methods: {
+        /**
+         * Метод выполняет добавление продукта в корзину.
+         * @param {Object} product Объект содержащий данные о продукте
+         */
         addProduct(product) {
             let find = this.cart.list.find(el => el.id_product === product.id_product);
             if (find) {
@@ -43,6 +47,10 @@ Vue.component('cart-popup', {
                     })
             }
         },
+        /**
+         * Метод выполняет удаление продукта из корзины.
+         * @param {Object} cartItem Объект содержащий данные о продукте
+         */
         remove(cartItem) {
             this.$parent.deleteJson(`${this.cartUrl}/${cartItem['id_product']}`)
                 .then(data => {
@@ -55,6 +63,10 @@ Vue.component('cart-popup', {
                     }
                 })
         },
+        /**
+         * Метод выполняет увеличение на единицу количества продукта в корзине.
+         * @param {Object} cartItem Объект содержащий данные о продукте
+         */
         increaseQuantity(cartItem) {
             this.$parent.putJson(`${this.cartUrl}/${cartItem['id_product']}/increase`)
                 .then(data => {
@@ -68,6 +80,10 @@ Vue.component('cart-popup', {
                     }
                 })
         },
+        /**
+         * Метод выполняет уменьшение на единицу количества продукта в корзине.
+         * @param {Object} cartItem Объект содержащий данные о продукте
+         */
         reduceQuantity(cartItem) {
             if (cartItem.quantity === 1) {
                 this.remove(cartItem);

@@ -17,6 +17,10 @@ Vue.component('product-list', {
             })
     },
     methods: {
+        /**
+         * Метод выполняет фильтрацию выводимых пользователю продуктов.
+         * @param {string} userSearch Поисковый запрос пользователя
+         */
         filterProduct(userSearch) {
             let regExp = new RegExp(userSearch, 'i');
             this.filtered = this.products.filter(el => regExp.test(el.product_name));
