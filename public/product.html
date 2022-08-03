@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/7caa26f6bf.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form></form>
+        <header class="header">
+            <nav class="wrap main-nav">
+                <ul class="main-nav__list main-nav__logo">
+                    <li class="main-nav__item"><a href="index.html" class="main-nav__link main-nav__link_type_logo"><img
+                                src="img/logo.png" alt="logo"></a></li>
+                    <li class="main-nav__item">
+                        <comp-catalog-search button-class="main-nav__button">
+                        </comp-catalog-search>
+                    </li>
+                </ul>
+                <ul class="main-nav__list main-nav__menu">
+                    <li class="main-nav__item">
+                        <comp-popup-menu button-class="main-nav__button"></comp-popup-menu>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="registration.html" class="main-nav__link"><svg width="29" height="29"
+                                viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.5 19.937C19 19.937 22.656 15.464 22.656 9.968C22.656 4.472 19 0 14.5 0C13.3631 0.0217413 12.2463 0.303398 11.2351 0.823397C10.2239 1.34339 9.34507 2.08794 8.66602 3C7.12663 4.99573 6.30819 7.45381 6.34399 9.974C6.34399 15.465 10 19.937 14.5 19.937ZM14.5 1.813C18 1.813 20.844 5.472 20.844 9.969C20.844 14.466 17.998 18.125 14.5 18.125C11.002 18.125 8.15603 14.465 8.15503 9.969C8.15403 5.473 11 1.813 14.5 1.813ZM20.844 18.125C20.6036 18.125 20.373 18.2205 20.203 18.3905C20.033 18.5605 19.9375 18.7911 19.9375 19.0315C19.9375 19.2719 20.033 19.5025 20.203 19.6725C20.373 19.8425 20.6036 19.938 20.844 19.938C22.526 19.9399 24.1386 20.6088 25.3279 21.7982C26.5172 22.9875 27.1861 24.6 27.188 26.282C27.1875 26.5221 27.0918 26.7523 26.922 26.9221C26.7522 27.0918 26.5221 27.1875 26.282 27.188H2.71997C2.47985 27.1875 2.24975 27.0918 2.07996 26.9221C1.91016 26.7523 1.81449 26.5221 1.81396 26.282C1.81608 24.6001 2.48517 22.9877 3.67444 21.7985C4.86371 20.6092 6.47608 19.9401 8.15796 19.938C8.39824 19.938 8.62868 19.8425 8.79858 19.6726C8.96849 19.5027 9.06396 19.2723 9.06396 19.032C9.06396 18.7917 8.96849 18.5613 8.79858 18.3914C8.62868 18.2215 8.39824 18.126 8.15796 18.126C5.99541 18.1279 3.92201 18.9875 2.39258 20.5164C0.863144 22.0453 0.00264777 24.1185 0 26.281C0.000794067 27.0019 0.287502 27.693 0.797241 28.2027C1.30698 28.7125 1.99811 28.9992 2.71899 29H26.282C27.0027 28.9989 27.6936 28.7121 28.2031 28.2024C28.7126 27.6927 28.9992 27.0017 29 26.281C28.9974 24.1187 28.1372 22.0457 26.6083 20.5168C25.0793 18.9878 23.0063 18.1276 20.844 18.125Z" />
+                            </svg></a>
+                    </li>
+                    <li class="main-nav__item">
+                        <cart-popup ref="cart" button-class="main-nav__button"></cart-popup>
+                    </li>
+                </ul>
+            </nav>
+
+
+        </header>
+        <nav class="crumbs">
+            <div class="wrap crumbs__wrap">
+                <h2 class="crumbs__heading">NEW ARRIVALS</h2>
+                <ul class="crumbs__list">
+                    <li class="crumbs__item"><a href="index.html" class="crumbs__link">HOME</a></li>
+                    <li class="crumbs__item"><a href="catalog.html" class="crumbs__link">MEN</a></li>
+                    <li class="crumbs__item"><a class="crumbs__link crumbs__link_current">NEW ARRIVALS</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="content">
+            <section class="product-card">
+                <div class="product-card__viewer">
+                    <button type="button" class="product-card__scroll-button product-card__scroll-button_position_left
+                    "><svg width="31" height="31" viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21.6998 7.7499L13.9498 15.4999L21.6998 23.2499L20.1498 26.3499L9.2998 15.4999L20.1498 4.6499L21.6998 7.7499Z" />
+                        </svg></button>
+                    <img src="img/product/adidas-t-shirt.jpg" alt="fotoProduct" class="product-card__img">
+                    <button type="button"
+                        class="product-card__scroll-button product-card__scroll-button_position_right"><svg width="31"
+                            height="31" viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.2998 23.2499L17.0498 15.4999L9.2998 7.7499L10.8498 4.6499L21.6998 15.4999L10.8498 26.3499L9.2998 23.2499Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="wrap">
+                    <div class="product-card__info">
+                        <h3 class="product-card__h3">WOMEN COLLECTION</h3>
+                        <h2 class="product-card__h2">MOSCHINO CHEAP AND CHIC</h2>
+                        <p class="product-card__text">Compellingly actualize fully researched processes before proactive
+                            outsourcing. Progressively syndicate collaborative architectures before cutting-edge
+                            services.
+                            Completely visualize parallel core competencies rather than exceptional portals. </p>
+                        <p class="product-card__price">$561</p>
+                        <div class="filter">
+                            <details class="filter__item">
+                                <summary class="filter__item-title">CHOOSE COLOR<svg width="11" height="6"
+                                        viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.00214 5.00214C4.83521 5.00247 4.67343 4.94433 4.54488 4.83782L0.258102 1.2655C0.112196 1.14422 0.0204417 0.969958 0.00302325 0.781035C-0.0143952 0.592112 0.0439493 0.404007 0.165221 0.258101C0.286493 0.112196 0.460759 0.0204417 0.649682 0.00302327C0.838605 -0.0143952 1.02671 0.043949 1.17262 0.165221L5.00214 3.36602L8.83167 0.279536C8.90475 0.220188 8.98884 0.175869 9.0791 0.149125C9.16937 0.122382 9.26403 0.113741 9.35764 0.1237C9.45126 0.133659 9.54198 0.162021 9.6246 0.207156C9.70722 0.252292 9.7801 0.313311 9.83906 0.386705C9.90449 0.460167 9.95405 0.546351 9.98462 0.639855C10.0152 0.733359 10.0261 0.83217 10.0167 0.930097C10.0073 1.02802 9.97784 1.12296 9.93005 1.20895C9.88227 1.29494 9.81723 1.37013 9.73904 1.42982L5.45225 4.88068C5.32002 4.97036 5.16154 5.01312 5.00214 5.00214Z" />
+                                    </svg></summary>
+                                <div class="filter__overlay">
+                                    <ul class="filter__overlay-list">
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>Red</span>
+                                            </label>
+                                        </li>
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>Green</span>
+                                            </label>
+                                        </li>
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>Blue</span>
+                                            </label>
+                                        </li>
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>White</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="filter__item">
+                                <summary class="filter__item-title">CHOOSE SIZE<svg width="11" height="6"
+                                        viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.00214 5.00214C4.83521 5.00247 4.67343 4.94433 4.54488 4.83782L0.258102 1.2655C0.112196 1.14422 0.0204417 0.969958 0.00302325 0.781035C-0.0143952 0.592112 0.0439493 0.404007 0.165221 0.258101C0.286493 0.112196 0.460759 0.0204417 0.649682 0.00302327C0.838605 -0.0143952 1.02671 0.043949 1.17262 0.165221L5.00214 3.36602L8.83167 0.279536C8.90475 0.220188 8.98884 0.175869 9.0791 0.149125C9.16937 0.122382 9.26403 0.113741 9.35764 0.1237C9.45126 0.133659 9.54198 0.162021 9.6246 0.207156C9.70722 0.252292 9.7801 0.313311 9.83906 0.386705C9.90449 0.460167 9.95405 0.546351 9.98462 0.639855C10.0152 0.733359 10.0261 0.83217 10.0167 0.930097C10.0073 1.02802 9.97784 1.12296 9.93005 1.20895C9.88227 1.29494 9.81723 1.37013 9.73904 1.42982L5.45225 4.88068C5.32002 4.97036 5.16154 5.01312 5.00214 5.00214Z" />
+                                    </svg></summary>
+                                <div class="filter__overlay">
+                                    <ul class="filter__overlay-list">
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>XS</span>
+                                            </label>
+                                        </li>
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>S</span>
+                                            </label>
+                                        </li>
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>M</span>
+                                            </label>
+                                        </li>
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>L</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="filter__item">
+                                <summary class="filter__item-title">QUANTITY<svg width="11" height="6"
+                                        viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.00214 5.00214C4.83521 5.00247 4.67343 4.94433 4.54488 4.83782L0.258102 1.2655C0.112196 1.14422 0.0204417 0.969958 0.00302325 0.781035C-0.0143952 0.592112 0.0439493 0.404007 0.165221 0.258101C0.286493 0.112196 0.460759 0.0204417 0.649682 0.00302327C0.838605 -0.0143952 1.02671 0.043949 1.17262 0.165221L5.00214 3.36602L8.83167 0.279536C8.90475 0.220188 8.98884 0.175869 9.0791 0.149125C9.16937 0.122382 9.26403 0.113741 9.35764 0.1237C9.45126 0.133659 9.54198 0.162021 9.6246 0.207156C9.70722 0.252292 9.7801 0.313311 9.83906 0.386705C9.90449 0.460167 9.95405 0.546351 9.98462 0.639855C10.0152 0.733359 10.0261 0.83217 10.0167 0.930097C10.0073 1.02802 9.97784 1.12296 9.93005 1.20895C9.88227 1.29494 9.81723 1.37013 9.73904 1.42982L5.45225 4.88068C5.32002 4.97036 5.16154 5.01312 5.00214 5.00214Z" />
+                                    </svg></summary>
+                                <div class="filter__overlay">
+                                    <ul class="filter__overlay-list">
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>1</span>
+                                            </label>
+                                        </li>
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>2</span>
+                                            </label>
+                                        </li>
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>3</span>
+                                            </label>
+                                        </li>
+                                        <li class="filter__overlay-item">
+                                            <label class="filter__overlay-radio">
+                                                <input type="radio" name="color" value="red">
+                                                <span>4</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <button type="button" class="product-card__button"><svg width="27" height="25"
+                                viewBox="0 0 27 25" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.49847 22.185C5.50635 21.752 5.64091 21.3309 5.88519 20.9748C6.12947 20.6186 6.47261 20.3431 6.87158 20.1828C7.27055 20.0226 7.7076 19.9848 8.12781 20.0741C8.54802 20.1635 8.93269 20.376 9.23358 20.685C9.53447 20.994 9.73817 21.3857 9.81909 21.811C9.90002 22.2363 9.85453 22.6763 9.68842 23.0756C9.52231 23.475 9.24296 23.8161 8.88538 24.0559C8.52779 24.2957 8.10791 24.4237 7.67847 24.4237C7.38955 24.4211 7.10399 24.3611 6.83807 24.2472C6.57216 24.1333 6.3311 23.9676 6.12866 23.7597C5.92623 23.5518 5.76639 23.3057 5.65826 23.0355C5.55013 22.7653 5.49584 22.4763 5.49847 22.185ZM21.3045 24.4237C20.8711 24.4303 20.4453 24.3087 20.0797 24.074C19.7141 23.8393 19.4247 23.5017 19.2471 23.103C19.0696 22.7042 19.0117 22.2618 19.0806 21.8303C19.1496 21.3988 19.3423 20.9971 19.6351 20.6748C19.9278 20.3524 20.3077 20.1236 20.728 20.0165C21.1482 19.9095 21.5903 19.929 21.9997 20.0724C22.4091 20.2159 22.7679 20.4771 23.0317 20.8238C23.2956 21.1706 23.453 21.5877 23.4845 22.0236C23.5269 22.6155 23.3369 23.2004 22.9555 23.6523C22.7706 23.8745 22.5436 24.0574 22.2877 24.1901C22.0319 24.3227 21.7524 24.4025 21.4655 24.4247L21.3045 24.4237ZM8.59351 17.4855C8.38116 17.4851 8.17488 17.414 8.00671 17.2833C7.83855 17.1525 7.71792 16.9694 7.66351 16.7624L3.73651 2.19527H0.978516C0.719001 2.19527 0.470064 2.09128 0.28656 1.90622C0.103056 1.72116 0 1.47018 0 1.20847C0 0.946764 0.103056 0.695782 0.28656 0.510726C0.470064 0.325669 0.719001 0.22168 0.978516 0.22168H4.45752C4.66982 0.222254 4.876 0.293463 5.04413 0.424184C5.21226 0.554905 5.33295 0.737883 5.38751 0.944787L9.31451 15.5119H20.0185L23.5765 7.12665H11.7185C11.459 7.12665 11.2101 7.02266 11.0266 6.83761C10.8431 6.65255 10.74 6.40157 10.74 6.13986C10.74 5.87815 10.8431 5.62717 11.0266 5.44211C11.2101 5.25705 11.459 5.15306 11.7185 5.15306H25.0535C25.2131 5.15352 25.3701 5.19451 25.5099 5.27223C25.6497 5.34995 25.7679 5.46195 25.8535 5.59784C25.9413 5.73569 25.9945 5.89303 26.0084 6.05627C26.0224 6.21951 25.9966 6.38368 25.9335 6.53465L21.5425 16.8935C21.469 17.0684 21.3462 17.2177 21.1895 17.3229C21.0327 17.4281 20.8488 17.4846 20.6605 17.4855H8.59351Z" />
+                            </svg>
+                            Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="wrap">
+                <div class="product-list-wrap product-list-wrap_margin_product">
+                    <section class="product-list">
+                        <h3 class="hidden">Product list</h3>
+                        <product-list product-count=3 ref="products"></product-list>
+                    </section>
+                </div>
+
+            </div>
+        </main>
+
+        <section class="features">
+            <h2 class="hidden">Our Features</h2>
+            <div class="wrap">
+                <ul class="features__list">
+                    <li class="features__item features__item_background_delivery">
+                        <h3 class="features__heading">Free Delivery</h3>
+                        <p class="features__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                            tion
+                            with extensive models.</p>
+                    </li>
+                    <li class="features__item features__item_background_sales">
+                        <h3 class="features__heading">Sales & discounts</h3>
+                        <p class="features__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                            tion
+                            with extensive models.</p>
+                    </li>
+                    <li class="features__item features__item_background_quality">
+                        <h3 class="features__heading">Quality assurance</h3>
+                        <p class="features__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                            tion
+                            with extensive models.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="feedback">
+            <div class="wrap feedback__wrap">
+                <div class="feedback__review">
+                    <img src="img/subscribe_foto.png" alt="subscribe_foto">
+                    <p class="feedback__text feedback__text_type_review">“Vestibulum quis porttitor dui! Quisque viverra
+                        nunc mi, <i>a
+                            pulvinar purus condimentum “</i></p>
+                </div>
+                <div class="feedback__subscribe">
+                    <h2 class="feedback__heading">SUBSCRIBE</h2>
+                    <p class="feedback__text feedback__text_type_subscribe">FOR OUR NEWLETTER AND PROMOTION</p>
+                    <form action="#" class="feedback__email-form">
+                        <input type="email" placeholder="Enter Your Email" required class="feedback__input"><button
+                            type="submit" class="feedback__button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="wrap footer__wrap">
+                <p class="footer__copy">&copy; 2021 Brand All Rights Reserved.</p>
+                <div class="footer__socials">
+                    <a href="#" class="footer__link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="footer__link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer__link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="#" class="footer__link"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script/compHeaderMenu.js"></script>
+    <script src="script/compCartPopup.js"></script>
+    <script src="script/compProductList.js"></script>
+    <script src="script/compCatalogSearch.js"></script>
+    <script src="script/main.js"></script>
+
+
+</body>
+
+</html>

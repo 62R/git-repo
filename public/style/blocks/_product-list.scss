@@ -1,0 +1,15 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    list-style-type: none;
+}
+
+@media (max-width: 1160px) {
+    .product-list {
+        &__list {
+            gap: 16px;
+        }
+    }
+}

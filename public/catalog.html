@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/7caa26f6bf.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <nav class="wrap main-nav">
+                <ul class="main-nav__list main-nav__logo">
+                    <li class="main-nav__item"><a href="index.html" class="main-nav__link main-nav__link_type_logo"><img
+                                src="img/logo.png" alt="logo"></a></li>
+                    <li class="main-nav__item">
+                        <comp-catalog-search button-class="main-nav__button">
+                        </comp-catalog-search>
+                    </li>
+                </ul>
+                <ul class="main-nav__list main-nav__menu">
+                    <li class="main-nav__item">
+                        <comp-popup-menu button-class="main-nav__button"></comp-popup-menu>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="registration.html" class="main-nav__link"><svg width="29" height="29"
+                                viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.5 19.937C19 19.937 22.656 15.464 22.656 9.968C22.656 4.472 19 0 14.5 0C13.3631 0.0217413 12.2463 0.303398 11.2351 0.823397C10.2239 1.34339 9.34507 2.08794 8.66602 3C7.12663 4.99573 6.30819 7.45381 6.34399 9.974C6.34399 15.465 10 19.937 14.5 19.937ZM14.5 1.813C18 1.813 20.844 5.472 20.844 9.969C20.844 14.466 17.998 18.125 14.5 18.125C11.002 18.125 8.15603 14.465 8.15503 9.969C8.15403 5.473 11 1.813 14.5 1.813ZM20.844 18.125C20.6036 18.125 20.373 18.2205 20.203 18.3905C20.033 18.5605 19.9375 18.7911 19.9375 19.0315C19.9375 19.2719 20.033 19.5025 20.203 19.6725C20.373 19.8425 20.6036 19.938 20.844 19.938C22.526 19.9399 24.1386 20.6088 25.3279 21.7982C26.5172 22.9875 27.1861 24.6 27.188 26.282C27.1875 26.5221 27.0918 26.7523 26.922 26.9221C26.7522 27.0918 26.5221 27.1875 26.282 27.188H2.71997C2.47985 27.1875 2.24975 27.0918 2.07996 26.9221C1.91016 26.7523 1.81449 26.5221 1.81396 26.282C1.81608 24.6001 2.48517 22.9877 3.67444 21.7985C4.86371 20.6092 6.47608 19.9401 8.15796 19.938C8.39824 19.938 8.62868 19.8425 8.79858 19.6726C8.96849 19.5027 9.06396 19.2723 9.06396 19.032C9.06396 18.7917 8.96849 18.5613 8.79858 18.3914C8.62868 18.2215 8.39824 18.126 8.15796 18.126C5.99541 18.1279 3.92201 18.9875 2.39258 20.5164C0.863144 22.0453 0.00264777 24.1185 0 26.281C0.000794067 27.0019 0.287502 27.693 0.797241 28.2027C1.30698 28.7125 1.99811 28.9992 2.71899 29H26.282C27.0027 28.9989 27.6936 28.7121 28.2031 28.2024C28.7126 27.6927 28.9992 27.0017 29 26.281C28.9974 24.1187 28.1372 22.0457 26.6083 20.5168C25.0793 18.9878 23.0063 18.1276 20.844 18.125Z" />
+                            </svg></a>
+                    </li>
+                    <li class="main-nav__item">
+                        <cart-popup ref="cart" button-class="main-nav__button"></cart-popup>
+                    </li>
+                </ul>
+            </nav>
+
+
+        </header>
+
+        <nav class="crumbs">
+            <div class="wrap crumbs__wrap">
+                <h2 class="crumbs__heading">NEW ARRIVALS</h2>
+                <ul class="crumbs__list">
+                    <li class="crumbs__item"><a href="index.html" class="crumbs__link">HOME</a></li>
+                    <li class="crumbs__item"><a href="catalog.html" class="crumbs__link">MEN</a></li>
+                    <li class="crumbs__item"><a class="crumbs__link crumbs__link_current">NEW ARRIVALS</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="content">
+            <div class="wrap">
+                <div class="product-list-wrap product-list-wrap_margin_catalog">
+                    <section class="product-list">
+                        <h2 class="hidden">Catalog</h2>
+                        <div class="filter-wrap">
+                            <details class="catalog-filter">
+                                <summary class="catalog-filter__summary">
+                                    <span class="catalog-filter__title-for-laptop">
+                                        FILTER<svg width="15" height="10" viewBox="0 0 15 10"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z" />
+                                        </svg>
+                                    </span>
+                                    <span class="catalog-filter__title-for-mobile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="25"
+                                            viewBox="0 0 38 25">
+                                            <path
+                                                d="M2.08333 25H10.4167C11.5625 25 12.5 24.0625 12.5 22.9167C12.5 21.7708 11.5625 20.8333 10.4167 20.8333H2.08333C0.9375 20.8333 0 21.7708 0 22.9167C0 24.0625 0.9375 25 2.08333 25ZM0 2.08333C0 3.22917 0.9375 4.16667 2.08333 4.16667H35.4167C36.5625 4.16667 37.5 3.22917 37.5 2.08333C37.5 0.9375 36.5625 0 35.4167 0H2.08333C0.9375 0 0 0.9375 0 2.08333ZM2.08333 14.5833H22.9167C24.0625 14.5833 25 13.6458 25 12.5C25 11.3542 24.0625 10.4167 22.9167 10.4167H2.08333C0.9375 10.4167 0 11.3542 0 12.5C0 13.6458 0.9375 14.5833 2.08333 14.5833Z" />
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <div class="catalog-filter__overlay">
+                                    <details open class="catalog-filter__overlay-details">
+                                        <summary class="catalog-filter__overlay-summary">CATEGORY</summary>
+                                        <ul class="catalog-filter__overlay-list">
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button"
+                                                    type="button">Accessories</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Bags</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Denim</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Hoodies &
+                                                    Sweatshirts</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Jackets &
+                                                    Coats</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Polos</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Shirts</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Shoes</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Sweaters &
+                                                    Knits</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button"
+                                                    type="button">T-Shirts</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Tanks</button>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                    <details class="catalog-filter__overlay-details">
+                                        <summary class="catalog-filter__overlay-summary">BRAND</summary>
+                                        <ul class="catalog-filter__overlay-list">
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button"
+                                                    type="button">Accessories</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Bags</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Denim</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Hoodies &
+                                                    Sweatshirts</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Jackets &
+                                                    Coats</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Polos</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Shirts</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Shoes</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Sweaters &
+                                                    Knits</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button"
+                                                    type="button">T-Shirts</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Tanks</button>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                    <details class="catalog-filter__overlay-details">
+                                        <summary class="catalog-filter__overlay-summary">DESIGNER</summary>
+                                        <ul class="catalog-filter__overlay-list">
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button"
+                                                    type="button">Accessories</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Bags</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Denim</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Hoodies &
+                                                    Sweatshirts</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Jackets &
+                                                    Coats</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Polos</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Shirts</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Shoes</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Sweaters &
+                                                    Knits</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button"
+                                                    type="button">T-Shirts</button>
+                                            </li>
+                                            <li class="catalog-filter__overlay-item"><button
+                                                    class="catalog-filter__overlay-button" type="button">Tanks</button>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </details>
+                            <div class="filter">
+                                <details class="filter__item">
+                                    <summary class="filter__item-title">TRENDING NOW<svg width="11" height="6"
+                                            viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.00214 5.00214C4.83521 5.00247 4.67343 4.94433 4.54488 4.83782L0.258102 1.2655C0.112196 1.14422 0.0204417 0.969958 0.00302325 0.781035C-0.0143952 0.592112 0.0439493 0.404007 0.165221 0.258101C0.286493 0.112196 0.460759 0.0204417 0.649682 0.00302327C0.838605 -0.0143952 1.02671 0.043949 1.17262 0.165221L5.00214 3.36602L8.83167 0.279536C8.90475 0.220188 8.98884 0.175869 9.0791 0.149125C9.16937 0.122382 9.26403 0.113741 9.35764 0.1237C9.45126 0.133659 9.54198 0.162021 9.6246 0.207156C9.70722 0.252292 9.7801 0.313311 9.83906 0.386705C9.90449 0.460167 9.95405 0.546351 9.98462 0.639855C10.0152 0.733359 10.0261 0.83217 10.0167 0.930097C10.0073 1.02802 9.97784 1.12296 9.93005 1.20895C9.88227 1.29494 9.81723 1.37013 9.73904 1.42982L5.45225 4.88068C5.32002 4.97036 5.16154 5.01312 5.00214 5.00214Z" />
+                                        </svg></summary>
+                                    <div class="filter__overlay">
+                                        <ul class="filter__overlay-list">
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>Lorem.</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>Lorem.</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>Lorem.</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>Lorem.</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </details>
+                                <details class="filter__item">
+                                    <summary class="filter__item-title">SIZE<svg width="11" height="6"
+                                            viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.00214 5.00214C4.83521 5.00247 4.67343 4.94433 4.54488 4.83782L0.258102 1.2655C0.112196 1.14422 0.0204417 0.969958 0.00302325 0.781035C-0.0143952 0.592112 0.0439493 0.404007 0.165221 0.258101C0.286493 0.112196 0.460759 0.0204417 0.649682 0.00302327C0.838605 -0.0143952 1.02671 0.043949 1.17262 0.165221L5.00214 3.36602L8.83167 0.279536C8.90475 0.220188 8.98884 0.175869 9.0791 0.149125C9.16937 0.122382 9.26403 0.113741 9.35764 0.1237C9.45126 0.133659 9.54198 0.162021 9.6246 0.207156C9.70722 0.252292 9.7801 0.313311 9.83906 0.386705C9.90449 0.460167 9.95405 0.546351 9.98462 0.639855C10.0152 0.733359 10.0261 0.83217 10.0167 0.930097C10.0073 1.02802 9.97784 1.12296 9.93005 1.20895C9.88227 1.29494 9.81723 1.37013 9.73904 1.42982L5.45225 4.88068C5.32002 4.97036 5.16154 5.01312 5.00214 5.00214Z" />
+                                        </svg></summary>
+                                    <div class="filter__overlay">
+                                        <ul class="filter__overlay-list">
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>XS</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>S</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>M</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>L</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </details>
+                                <details class="filter__item">
+                                    <summary class="filter__item-title">PRICE<svg width="11" height="6"
+                                            viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.00214 5.00214C4.83521 5.00247 4.67343 4.94433 4.54488 4.83782L0.258102 1.2655C0.112196 1.14422 0.0204417 0.969958 0.00302325 0.781035C-0.0143952 0.592112 0.0439493 0.404007 0.165221 0.258101C0.286493 0.112196 0.460759 0.0204417 0.649682 0.00302327C0.838605 -0.0143952 1.02671 0.043949 1.17262 0.165221L5.00214 3.36602L8.83167 0.279536C8.90475 0.220188 8.98884 0.175869 9.0791 0.149125C9.16937 0.122382 9.26403 0.113741 9.35764 0.1237C9.45126 0.133659 9.54198 0.162021 9.6246 0.207156C9.70722 0.252292 9.7801 0.313311 9.83906 0.386705C9.90449 0.460167 9.95405 0.546351 9.98462 0.639855C10.0152 0.733359 10.0261 0.83217 10.0167 0.930097C10.0073 1.02802 9.97784 1.12296 9.93005 1.20895C9.88227 1.29494 9.81723 1.37013 9.73904 1.42982L5.45225 4.88068C5.32002 4.97036 5.16154 5.01312 5.00214 5.00214Z" />
+                                        </svg></summary>
+                                    <div class="filter__overlay">
+                                        <ul class="filter__overlay-list">
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>100$&lt;</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>100-500$</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>500-1000$</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter__overlay-item">
+                                                <label class="filter__overlay-checkbox">
+                                                    <input type="checkbox" checked><span>&gt;1000$</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <product-list product-count=9 ref="products"></product-list>
+                        <nav class="pagination">
+                            <ul class="pagination__list">
+                                <li class="pagination__item pagination__item_position_first"><button
+                                        class="pagination__button pagination__button_status_disabled"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14">
+                                            <path
+                                                d="M8.99512 2L3.99512 7L8.99512 12L7.99512 14L0.995117 7L7.99512 0L8.99512 2Z" />
+                                        </svg></button></li>
+                                <li class="pagination__item"><button type="button"
+                                        class="pagination__button pagination__button_status_active">1</button></li>
+                                <li class="pagination__item"><button type="button" class="pagination__button">2</button>
+                                </li>
+                                <li class="pagination__item"><button type="button" class="pagination__button">3</button>
+                                </li>
+                                <li class="pagination__item"><button type="button" class="pagination__button">4</button>
+                                </li>
+                                <li class="pagination__item"><button type="button" class="pagination__button">5</button>
+                                </li>
+                                <li class="pagination__item pagination__item_position_prev-dots"><button type="button"
+                                        class="pagination__button">6</button></li>
+                                <li class="pagination__item pagination__item_position_dots"><button type="button"
+                                        class="pagination__button pagination__button_status_disabled">.....</button>
+                                </li>
+                                <li class="pagination__item pagination__item_position_post-dots"><button type="button"
+                                        class="pagination__button">20</button></li>
+                                <li class="pagination__item pagination__item_position_last"><button type="button"
+                                        class="pagination__button"><svg xmlns="http://www.w3.org/2000/svg" width="9"
+                                            height="14" viewBox="0 0 9 14">
+                                            <path
+                                                d="M0.994995 12L5.995 7L0.994995 2L1.995 0L8.995 7L1.995 14L0.994995 12Z" />
+                                        </svg></button></li>
+                            </ul>
+                        </nav>
+                    </section>
+                </div>
+            </div>
+
+        </main>
+
+        <section class="features">
+            <h2 class="hidden">Our Features</h2>
+            <div class="wrap">
+                <ul class="features__list">
+                    <li class="features__item features__item_background_delivery">
+                        <h3 class="features__heading">Free Delivery</h3>
+                        <p class="features__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                            tion
+                            with extensive models.</p>
+                    </li>
+                    <li class="features__item features__item_background_sales">
+                        <h3 class="features__heading">Sales & discounts</h3>
+                        <p class="features__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                            tion
+                            with extensive models.</p>
+                    </li>
+                    <li class="features__item features__item_background_quality">
+                        <h3 class="features__heading">Quality assurance</h3>
+                        <p class="features__text">Worldwide delivery on all. Authorit tively morph next-generation innov
+                            tion
+                            with extensive models.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="feedback">
+            <div class="wrap feedback__wrap">
+                <div class="feedback__review">
+                    <img src="img/subscribe_foto.png" alt="subscribe_foto">
+                    <p class="feedback__text feedback__text_type_review">“Vestibulum quis porttitor dui! Quisque viverra
+                        nunc mi, <i>a
+                            pulvinar purus condimentum “</i></p>
+                </div>
+                <div class="feedback__subscribe">
+                    <h2 class="feedback__heading">SUBSCRIBE</h2>
+                    <p class="feedback__text feedback__text_type_subscribe">FOR OUR NEWLETTER AND PROMOTION</p>
+                    <form action="#" class="feedback__email-form">
+                        <input type="email" placeholder="Enter Your Email" required class="feedback__input"><button
+                            type="submit" class="feedback__button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="wrap footer__wrap">
+                <p class="footer__copy">&copy; 2021 Brand All Rights Reserved.</p>
+                <div class="footer__socials">
+                    <a href="#" class="footer__link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="footer__link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer__link"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="#" class="footer__link"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script/compHeaderMenu.js"></script>
+    <script src="script/compCatalogSearch.js"></script>
+    <script src="script/compCartPopup.js"></script>
+    <script src="script/compProductList.js"></script>
+    <script src="script/main.js"></script>
+
+
+</body>
+
+</html>

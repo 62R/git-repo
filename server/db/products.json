@@ -1,0 +1,68 @@
+[
+  {
+    "id_product": 1,
+    "product_name": "Levi's T-shirt",
+    "price": 2000,
+    "img": "img/product/levis.jpg"
+  },
+  {
+    "id_product": 2,
+    "product_name": "Tommy Hilfiger jeans",
+    "price": 5000,
+    "img": "img/product/tommy-hilfiger.jpg"
+  },
+  {
+    "id_product": 3,
+    "product_name": "Adidas sneakers",
+    "price": 8000,
+    "img": "img/product/adidas.jpg"
+  },
+  {
+    "id_product": 4,
+    "product_name": "Burberry trench",
+    "price": 20200,
+    "img": "img/product/burberry.jpg"
+  },
+  {
+    "id_product": 5,
+    "product_name": "Timberland boots",
+    "price": 9400,
+    "img": "img/product/timberland.jpg"
+  },
+  {
+    "id_product": 6,
+    "product_name": "Sandro coat",
+    "price": 19000,
+    "img": "img/product/sandro.jpg"
+  },
+  {
+    "id_product": 7,
+    "product_name": "Uniqlo T-shirt",
+    "price": 1200,
+    "img": "img/product/uniqlo.jpg"
+  },
+  {
+    "id_product": 8,
+    "product_name": "Converse sneakers",
+    "price": 6000,
+    "img": "img/product/converse.jpg"
+  },
+  {
+    "id_product": 9,
+    "product_name": "Vans sneakers",
+    "price": 6100,
+    "img": "img/product/vans.jpg"
+  },
+  {
+    "id_product": 10,
+    "product_name": "Adidas T-shirt",
+    "price": 1500,
+    "img": "img/product/adidas-t-shirt.jpg"
+  },
+  {
+    "id_product": 11,
+    "product_name": "Uniqlo down jacket",
+    "price": 1900,
+    "img": "img/product/uniqlo-jacket.jpg"
+  }
+]

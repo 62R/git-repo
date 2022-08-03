@@ -1,0 +1,68 @@
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+
+    &__list {
+        display: flex;
+        align-items: flex-end;
+        list-style: none;
+    }
+
+    &__logo {
+        gap: 40px;
+    }
+
+    &__menu {
+        gap: 33px;
+    }
+
+    &__button {
+        @include button-transition();
+        border: none;
+        background-color: transparent;
+        fill: $alt-color;
+
+        &:hover {
+            fill: $main-color;
+        }
+
+        svg {
+            display: block;
+        }
+    }
+
+    &__link {
+        @include button-transition();
+        text-decoration: none;
+        fill: $alt-color;
+        display: flex;
+
+        &:hover {
+            fill: $main-color;
+        }
+
+        &_type {
+            &_logo {
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 760px) {
+    .main-nav__menu>.main-nav__item {
+        &:nth-child(2) {
+            display: none;
+        }
+
+        &:nth-child(3) {
+            display: none;
+        }
+
+    }
+}

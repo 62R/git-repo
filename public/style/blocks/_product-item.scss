@@ -1,0 +1,97 @@
+.product-item {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F8F8;
+    position: relative;
+
+    &:hover .product-item__overlay {
+        opacity: 1;
+    }
+
+    &__img {
+        width: 360px;
+        height: 420px;
+        object-fit: cover;
+    }
+
+    &__h3 {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        margin-top: 25px;
+        margin-left: 16px;
+        margin-right: 16px;
+        color: #000000;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        @include text-font-style();
+        margin-top: 12px;
+        margin-left: 16px;
+        margin-right: 16px;
+        color: #5D5D5D;
+    }
+
+    &__price {
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 18px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 19px;
+        color: $main-color;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #000000;
+
+        &:hover {
+            text-decoration: underline;
+            color: $main-color;
+        }
+    }
+
+    &__video {
+        width: 360px;
+        height: 420px;
+    }
+
+    &__overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 360px;
+        height: 420px;
+        background-color: rgba(58, 56, 56, 0.86);
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    &__overlay-button {
+        @include text-font-style;
+        @include button-transition;
+        font-weight: 400;
+        color: $alt-color;
+        fill: $alt-color;
+        border: 1px solid $alt-color;
+        background-color: transparent;
+        padding: 11px 16px 8px 13px;
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 11px;
+        }
+
+        &:hover {
+            fill: $main-color;
+            border-color: $main-color;
+            color: $main-color;
+            cursor: pointer;
+        }
+    }
+}
